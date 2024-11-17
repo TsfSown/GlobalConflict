@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Conflict - Jeu de Stratégie Militaire</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        #home {
+            background: url('background.jpg') no-repeat center center/cover;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        #home h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        #home button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #444;
+            border: none;
+            cursor: pointer;
+        }
+
+        #home button:hover {
+            background-color: #555;
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        section p, section ul {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        #features ul {
+            list-style: disc;
+            padding-left: 40px;
+        }
+
+        #signup form {
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #signup form label {
+            margin-top: 10px;
+        }
+
+        #signup form input {
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 1em;
+        }
+
+        #signup form button {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            cursor: pointer;
+        }
+
+        #signup form button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Global Conflict</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#features">Fonctionnalités</a></li>
+                    <li><a href="#signup">Inscription</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h2>Bienvenue sur Global Conflict</h2>
+            <p>Plongez dans un jeu de stratégie militaire en temps réel et prenez le contrôle pour dominer vos adversaires.</p>
+            <button onclick="scrollToSignup()">Commencez à jouer</button>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>À propos de Global Conflict</h2>
+            <p>Global Conflict est un jeu de stratégie militaire en ligne dans lequel les joueurs construisent leur base, gèrent leurs ressources et mènent des batailles pour étendre leur domination. Créez des alliances, planifiez des stratégies et devenez le chef suprême.</p>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>Fonctionnalités du Jeu</h2>
+            <ul>
+                <li>Construisez et améliorez vos bâtiments pour renforcer votre base.</li>
+                <li>Formez des unités militaires et préparez votre armée.</li>
+                <li>Participez à des batailles épiques en temps réel contre d'autres joueurs.</li>
+                <li>Gérez vos ressources pour développer votre puissance (Nourriture, Matériaux, Or).</li>
+                <li>Formez des alliances pour conquérir ensemble.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="signup">
+        <div class="container">
+            <h2>Inscription</h2>
+            <form id="signup-form">
+                <label for="username">Nom d'utilisateur:</label>
+                <input type="text" id="username" name="username" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="password">Mot de passe:</label>
+                <input type="password" id="password" name="password" required><br><br>
+
+                <button type="submit">S'inscrire</button>
+            </form>
+            <div id="responseMessage"></div>
+
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Global Conflict. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSignup() {
+            document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Merci de vous être inscrit !');
+        });
+    </script>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+    
+            try {
+                const response = await fetch('http://localhost:3000/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, email, password })
+                });
+    
+                const data = await response.text();
+    
+                if (response.ok) {
+                    alert('Inscription réussie !');
+                } else {
+                    alert(`Erreur : ${data}`);
+                }
+            } catch (error) {
+                console.error('Erreur lors de l\'inscription', error);
+                alert('Erreur lors de l\'inscription');
+            }
+        });
+    </script>
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", async function (e) {
+            e.preventDefault(); // Empêcher le rechargement de la page
+
+            // Récupérer les valeurs du formulaire
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Préparer les données de la requête
+            const requestData = {
+                username: username,
+                email: email,
+                password: password
+            };
+
+            try {
+                // Envoyer la requête POST à l'API d'inscription
+                const response = await fetch("http://localhost:3000/auth/register", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(requestData)
+                });
+
+                // Afficher le message de réponse
+                const result = await response.text();
+                document.getElementById("responseMessage").innerText = result;
+            } catch (error) {
+                console.error("Erreur lors de l'inscription :", error);
+                document.getElementById("responseMessage").innerText = "Erreur lors de l'inscription.";
+            }
+        });
+    </script>    
+</body>
+</html>
